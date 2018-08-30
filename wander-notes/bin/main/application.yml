@@ -1,0 +1,31 @@
+# config context path to "/" by setting an empty string
+server:
+  port: 8090
+  contextPath:
+
+# JACKSON
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  data:
+    mongodb:
+      uri: mongodb://anmolasingh:Anmolgolu11@cluster0-shard-00-00-6c8r9.mongodb.net:27017,cluster0-shard-00-01-6c8r9.mongodb.net:27017,cluster0-shard-00-02-6c8r9.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
+      #host: localhost
+      #port: 27017
+      database: shop_db
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+      register: register
+
+logging:
+  level:
+    org.springframework:
+      security: DEBUG
